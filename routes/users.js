@@ -1,9 +1,13 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+var users = require('../controller/users.js');
+
+/* POST checkLogin. use users.checkLogin*/
+router.post('/checkLogin',users.checkLogin);
+
+
+/*  GET testSession page  use session */
+router.get('/testSession',users.getSession);
 
 module.exports = router;

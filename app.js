@@ -31,6 +31,9 @@ app.use(session({
   secret:"2wk9ek8ddsjznx88ddsjakdds83deskc"
 }));
 
+
+/*  路由Router配置文件(入口文件)  */
+//根请求"/"  跳转至router/index  routes  line8   var routes = require('./routes/index');
 app.use('/', routes);
 app.use('/users', users);
 
