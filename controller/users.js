@@ -1,4 +1,7 @@
+var userModel = require('../models/userModel');
 
+
+/**处理post请求*/
 /*  checkLogin方法    */
 exports.checkLogin = function(req,res){
     var username = req.body.username;
@@ -10,9 +13,18 @@ exports.checkLogin = function(req,res){
     //res.send("用户名: "+ username +" , 密码: "+ password);
     //console.log("用户名: "+ username +" , 密码: "+ password);
 
-    res.render('welcome',{
-        username: req.session.name
+    userModel.getByNameAndPwd(username,password,function(rs){
+        if(rs){
+            res.send('查询成功！');
+        }else{
+            res.send('查询失败！');
+        }
     });
+
+
+    // res.render('welcome',{
+    //     username: req.session.name
+    // });
 };
 
 /*  getSession方法    */

@@ -11,4 +11,9 @@ router.get('/', welcome.index);
 router.get('/login',welcome.login);
 
 
+router.get('/testQuery', welcome.query);
+
+router.get('/testParams/:name/:age', welcome.params);
+
+
 module.exports = router;
