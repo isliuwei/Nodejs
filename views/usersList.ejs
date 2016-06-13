@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+</head>
+<body>
+
+
+<table class="table table-bordered">
+   <caption>边框表格布局</caption>
+   <thead>
+      <tr>
+        <th>用户名</th>
+        <th>密码</th>
+        <th>id</th>
+        <th>操作</th>
+      </tr>
+   </thead>
+   <tbody>
+   <% 
+      for(var i=0; i<users.length; i++){
+   %>
+      <tr>
+         <td><%= users[i].username %></td>
+         <td><%= users[i].password %></td>
+         <td><%= users[i]._id %></td>
+         <td><a href="delete?user_id=<%= users[i]._id %>">删除</a></td>
+      </tr>
+    <% 
+      }
+    %> 
+   </tbody>
+</table>
+
+
+</body>
+</html>

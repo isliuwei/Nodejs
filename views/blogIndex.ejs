@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Index</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/fonts/glyphicons-halflings-regular.svg">
+    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="/stylesheets/demo.css"> -->
+    <style>
+    	body{
+    		background: #eee;
+    	}
+    	header{
+    		box-shadow: 0 0 8px rgba(0, 0, 0, 0.23);
+    	}
+    	.navbar{
+    		padding: 0px 10px;
+    		background: rgba(255,255,255,0.85);
+    	}
+    	
+    	.logo{
+			width: 30px;
+			height: 30px;
+			float: left;
+			margin-top: 10px;
+			border-radius: 2px;
+    	}
+
+    	@media (max-width: 767px){
+		    .user-btn{
+		    	display: none;
+		    }
+		    
+
+		}
+		.container{
+			margin-top: 80px;
+		}
+		.label{
+			display: inline-block;
+			padding: 5px 10px;
+			margin: 5px;
+		}
+		.panel-body{
+			/*text-align: justify;*/
+			/*text-align: left;*/
+
+		}
+		.btn-tag{
+			display: inline-block;
+			padding: 4px 6px;
+			margin: 4px;
+			
+		}
+		.img{
+			margin-top: 10px;
+		}
+		.name{
+			margin-top: 10px;
+			text-align: center;
+		}
+		.desc{
+			text-align: justify;
+			hyphens: auto;
+		}
+		.bbs-group{
+			text-align: center;
+		}
+		.label{
+			margin-right: 0px;
+			margin-left: 0px;
+			cursor: pointer;
+		}
+		.xx{
+			position: absolute;
+			/*width: 20%;*/
+			top: 10%;
+			left: 40%;
+			float: left;
+		}
+		.footer{
+			/*background-image: url(/images/footer-bg.png);
+			background-color: rgba(0,0,0,.8);*/
+			background: #f2f1f7;
+		}
+		.wrap{
+			padding-top: 20px;
+		}
+		.list-group{
+			cursor: pointer;
+		}
+		
+		.tag{
+		    display: inline-block;
+		    padding: 0 8px;
+		    color: #017e66;
+		    background-color: rgba(1,126,102,.08);
+		    height: 24px;
+		    line-height: 24px;
+		    font-weight: 400;
+		    font-size: 13px;
+		    text-align: center;
+		    border-radius: 3px;
+		}
+		.tag-sm{
+		    padding: 0 6px;
+		    height: 20px;
+		    line-height: 20px;
+		    font-size: 12px;
+		}
+		.tag:hover{
+			color: #fff;
+			background: #009a61;;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+   
+
+	<header class='navbar navbar-default navbar-fixed-top' id='main-navbar' role='banner'>
+		<div class='container-fluid'>
+			<div class='navbar-header'>
+			  <!-- <button class='navbar-toggle collapsed' data-target='.navbar-collapse' data-toggle='collapse' type='button'>
+			    <span>
+			      
+			    </span>
+			    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+			  </button> -->
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	            </button>
+			  	<img class="logo" alt="" src="/images/favicon.ico">
+			  
+			</div>
+			
+			<nav class='collapse navbar-collapse' role='navigation'>
+				
+				<!-- <img class="logo" alt="" src="/images/favicon.ico"> -->
+			  <ul class='nav navbar-nav navbar-left'>
+
+			    <li><a href="/features">首页</a></li>
+			    <li  class="active"><a href="/pricing">博文列表</a></li>
+			    <li><a href="/pricing">个人主页</a></li>
+			    <li><a href="/blog">联系我</a></li>
+			    <li><a href="/blog">关于我</a></li>
+			    <div class="xx col-md-3">
+				    <div class="input-group">
+				      <input type="text" class="form-control" placeholder="Search for...">
+				      <span class="input-group-btn">
+				        <button class="btn btn-default" type="button">Go!</button>
+				      </span>
+				    </div>
+  				</div>
+			    <!-- <li class='dropdown'>
+			      <a aria-expanded='false' aria-haspopup='true' class='dropdown-toggle' data-target='#' data-toggle='dropdown' role='button'>
+			        Explore
+			        <i class='material-icons md-expand_more'></i>
+			      </a>
+			      <ul class='dropdown-menu has-caret'>
+			        <li class='dropdown-header'>Integrations</li>
+			        <li><a href="/gps">GPS Tracking</a></li>
+			        <li><a href="/fuel-cards">Fuel Cards</a></li>
+			        <li class='divider' role='separator'></li>
+			        <li class='dropdown-header'>Resources</li>
+			        <li><a href="http://help.fleetio.com">Help Center</a></li>
+			        <li><a href="/faq">FAQs</a></li>
+			        <li><a href="/success">Case Studies</a></li>
+			        <li><a href="/webinars">Training Webinars</a></li>
+			        <li><a href="/api">Developer API</a></li>
+			        <li class='divider' role='separator'></li>
+			        <li class='dropdown-header'>Company</li>
+			        <li><a href="/about">About Us</a></li>
+			        <li><a href="/contact">Contact Us</a></li>
+			        <a class="btn btn-xs btn-yellow btn-hiring" href="/careers"><i class='material-icons md-message'></i>
+			        <span>We're Hiring!</span>
+			        </a>
+			      </ul>
+			    </li> -->
+			  </ul>
+			  <div class='navbar-right'>
+			  
+
+			  
+
+
+				<!-- Split button -->
+				<div class="btn-group user-btn">
+					<button type="button" class="btn btn-default ">
+			  			<% 
+						  	if(username){
+						%>
+						  	<%=username%>
+						  		
+						<%
+						  	}else{
+						%>
+						  	请登录  
+						<%
+						  	}
+						%>
+					</button>
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    <span class="caret"></span>
+					    <span class="sr-only">Toggle Dropdown</span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="/users/login">Login</a></li>
+						<li><a href="#">Setting</a></li>
+						<li><a href="#">Show</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="/users/logout">Logout</a></li>
+					</ul>
+				</div>
+			    <a class="btn btn-primary navbar-btn login-btn" href="/users/login">Login</a>
+			    
+			    <a class="btn navbar-btn js-login-btn" href="/users/register">Register</a>
+			  </div>
+			</nav>
+		</div>
+	</header>
+
+	<div class="container">
+    	<div class="row">
+	        <div class="col-md-9">
+	          	<div class="panel panel-default">
+  					<div class="panel-heading">
+  						<h3 class="panel-title">Panel title</h3>
+  						Panel heading without title
+  						
+  					</div>
+					<div class="panel-body">
+						<!-- List group -->
+						<div class="list-group">
+						    <a class="list-group-item"><span class="label label-success">原创</span> 野狗Meetup Node.js技术沙龙</a>
+						    <a class="list-group-item">
+							    <span class="label label-info">原创</span> 
+							    redis 缓存方案--有没有可用的？
+							    <span class="tag tag-sm" data-container="body" data-toggle="popover" data-title="html" data-trigger="hover" data-delay=500 data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">webpack</span>
+							    <span class="tag tag-sm" >webpack</span>
+						    </a>
+						    <a class="list-group-item"><span class="label label-warning">原创</span>  Linux中,有了tar命令,似乎gzip,compress这些命令没有什么用了?</a>
+						    <a class="list-group-item"><span class="label label-danger">原创</span> homebrew 安装问题 </a>
+						    <a class="list-group-item"><span class="label label-primary">原创</span> fis3根目录的文件不能发布到static目录中？</a>
+						    <a class="list-group-item"><span class="label label-success">原创</span> 野狗Meetup Node.js技术沙龙</a>
+						    <a class="list-group-item"><span class="label label-info">原创</span> redis 缓存方案--有没有可用的？</a>
+						    <a class="list-group-item"><span class="label label-warning">原创</span>  Linux中,有了tar命令,似乎gzip,compress这些命令没有什么用了?</a>
+						    <a class="list-group-item"><span class="label label-danger">原创</span> homebrew 安装问题 </a>
+						    <a class="list-group-item"><span class="label label-primary">原创</span> fis3根目录的文件不能发布到static目录中？</a>
+						    <a class="list-group-item"><span class="label label-success">原创</span> 野狗Meetup Node.js技术沙龙</a>
+						    <a class="list-group-item"><span class="label label-info">原创</span> redis 缓存方案--有没有可用的？</a>
+						    <a class="list-group-item"><span class="label label-warning">原创</span>  Linux中,有了tar命令,似乎gzip,compress这些命令没有什么用了?</a>
+						    <a class="list-group-item"><span class="label label-danger">原创</span> homebrew 安装问题 </a>
+						    <a class="list-group-item"><span class="label label-primary">原创</span> fis3根目录的文件不能发布到static目录中？</a>
+						</div>
+						<nav>
+					      	<ul class="pagination">
+						        <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+						        <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+						        <li><a href="#">2</a></li>
+						        <li><a href="#">3</a></li>
+						        <li><a href="#">4</a></li>
+						        <li><a href="#">5</a></li>
+						        <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+					     	</ul>
+   						</nav>
+					</div>
+				</div>
+
+			</div>
+
+	        
+	        <div class="col-md-3">
+
+	        	<div class="panel panel-info">
+  					<div class="panel-heading">About Me</div>
+  					<div class="panel-body">
+	    				<div class="thumbnail">
+					      	<img class="img img-circle img-thumbnail" src="/images/favicon.ico" alt="...">
+					      	<div class="caption">
+					        <h3 class="name bg-info text-success">Liu wei</h3>
+					        <p class="desc text-info">Lorem ipsum dolor sit amet, consectetur elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+					        <!-- <p class="desc">
+					        	<a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a>
+					        </p> -->
+					        <div class="bbs-group">
+					        	<span class="label label-primary" data-toggle="tooltip" data-placement="top" title="github"><i class="fa fa-github fa-fw"></i></span>
+								<span class="label label-success" data-toggle="tooltip" data-placement="top" title="QQ"><i class="fa fa-qq fa-fw"></i></span>
+								<span class="label label-info" data-toggle="tooltip" data-placement="top" title="wechat"><i class="fa fa-wechat fa-fw"></i></span>
+								<span class="label label-warning" data-toggle="tooltip" data-placement="top" title="facebook"> <i class="fa fa-facebook fa-fw"></i></span>
+								<span class="label label-danger" data-toggle="tooltip" data-placement="top" title="twitter"> <i class="fa fa-twitter fa-fw"></i></span>
+					        </div>
+							
+					      </div>
+    					</div>
+  					</div>
+				</div>
+
+	        	<div class="panel panel-success">
+  					<div class="panel-heading">Tags</div>
+					<div class="panel-body">
+						
+						<button class="btn btn-default btn-tag" type="button">
+						  html <span class="badge">14</span>
+						</button>
+						<button class="btn btn-primary btn-tag" type="button">
+						  html5/css3 <span class="badge">10</span>
+						</button>
+						<button class="btn btn-primary btn-tag" type="button">
+						  css <span class="badge">10</span>
+						</button>
+						<button class="btn btn-success btn-tag" type="button">
+						  javascript <span class="badge">99</span>
+						</button>
+						<button class="btn btn-info btn-tag" type="button">
+						  nodejs <span class="badge">41</span>
+						</button>
+						<button class="btn btn-success btn-tag" type="button">
+						  mongoDB <span class="badge">41</span>
+						</button>
+						<button class="btn btn-warning btn-tag" type="button">
+						  php <span class="badge">24</span>
+						</button>
+						<button class="btn btn-primary btn-tag" type="button">
+						  mysql <span class="badge">30</span>
+						</button>
+						<button class="btn btn-info btn-tag" type="button">
+						  angularjs <span class="badge">30</span>
+						</button>
+						<button class="btn btn-danger btn-tag" type="button">
+						  reactjs <span class="badge">30</span>
+						</button>
+						<button class="btn btn-success btn-tag" type="button">
+						  grunt <span class="badge">30</span>
+						</button>
+					</div>
+				</div>
+
+				
+			</div>
+        </div>	
+	</div>
+
+
+
+	<footer class="footer navbar-static-bottom wrap" >
+	    <div class="container wrap">
+		    <div class="row">
+		      <div class="col-md-4 col-sm-12 col-xs-12  footer-section footer-info">
+
+
+				<div class="panel panel-default">
+				  <div class="panel-heading">
+				    <h3 class="panel-title">Contact Me</h3>
+				  </div>
+				  	<div class="panel-body">
+    					<form>
+						  <div class="form-group">
+						    <label for="exampleInputEmail1">Your Name</label>
+						    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Your Name">
+						  </div>
+						  <div class="form-group">
+						    <label for="exampleInputEmail1">Your Email</label>
+						    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Your Email">
+						  </div>
+						  <div class="form-group">
+						    <label for="exampleInputEmail1">Your Tel</label>
+						    <input type="number" class="form-control" placeholder="Your Tel">
+						  </div>
+						  <div class="form-group">
+						    <label for="exampleInputPassword1">Your QQ</label>
+						    <input type="number" class="form-control" placeholder="Your QQ">
+						  </div>
+						  
+						  
+						  <button type="submit" class="btn btn-default">Submit</button>
+						  <button type="reset" class="btn btn-default">reset</button>
+						</form>
+  					</div>
+				</div>
+		       
+				<!-- <form>
+						<h3 class="block-title">
+								Send a message
+						</h3>
+						<form action="#" class="form-box" method="post">
+							<div class="form-wrap">
+								<label for="name">Your Name</label>
+								<i class="fa fa-user fa-fw"></i>
+								<input type="text" name="name" id="name" class="text-ipnut form-username" placeholder="enter your full name here *" required>
+							</div>
+							<div class="form-wrap">
+								<label for="email">Your E-mail</label>
+								<i class="fa fa-envelope fa-fw"></i>
+								<input type="email" name="email" id="email" class="form-email" placeholder="your e-mail address *" required>
+							</div>
+							<div class="form-wrap">
+								<label for="phone">Your Tel</label>
+								<i class="fa fa-phone fa-fw"></i>
+								<input type="tel" name="tel" id="phone" class="form-phone" pattern="[0-9]{10}" title="contact number" placeholder="contact number">
+							</div>
+							
+							<div class="form-wrap">
+								<label for="qq-num">Your QQ</label>
+								<i class="fa fa-qq fa-fw"></i>
+								<input type="tel" name="qqNum" id="qq-num" class="form-qq" pattern="[0-9]{10}" title="qq number" placeholder="qq number">
+							</div>
+							<div class="form-wrap">
+								<label for="message">Message</label>
+								
+								<div class="message-content">
+									<i class="fa fa-pencil fa-fw"></i>
+									<textarea name="userMessage" id="message" cols="30" rows="5" placeholder="message"></textarea>
+								</div>
+
+							</div>
+							
+							
+							
+							
+								
+								
+							<input type="submit" class="form-button submit" value="submit">
+							<input type="reset" class="form-button reset" value="reset">
+							
+						</form>
+							
+					
+						
+					</form> -->
+		      </div>
+		      <div class="col-md-4 col-sm-6 col-xs-12 footer-section">
+		        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illum provident sit est mollitia delectus dignissimos rerum dolores. Mollitia officiis autem quibusdam facere fugiat perspiciatis nisi ipsam esse deserunt labore.
+		        
+		      </div>
+		      <div class="col-md-4 col-sm-6 col-xs-12 footer-section">
+		      	<div class="page-header">
+  					<h3>My Location <small>from Baidu Map</small></h3>
+  				<div id="allmap"  style="height: 250px; width:100%;"></div>
+				</div>
+		        
+		      </div>
+		      
+  		</div>
+	</footer>
+<script src="/javascripts/jquery.js"></script> 
+<script src="/javascripts/bootstrap.min.js"></script>
+<script>
+	$(function () {
+  		$('[data-toggle="tooltip"]').tooltip()
+	});
+
+	$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+</script> 
+<!-- <script src="http://api.map.baidu.com/api?v=2.0&ak=AMt1vrxwTqGzf1I94PMx7K0u" type="text/javascript"></script> -->
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	var point = new BMap.Point(126.637828, 45.714955);
+	map.centerAndZoom(point, 18);
+	var marker = new BMap.Marker(point);  // 创建标注
+	map.addOverlay(marker);               // 将标注添加到地图中
+	marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+	map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+	//map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+	map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+</script>
+</body>
+</html>

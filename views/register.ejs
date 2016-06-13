@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <style>
+        body{
+            font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 13px;
+            line-height: 1.5;
+            color: #394347;
+            background-color: #f5f7f7;
+        }
+        .auth-box-content{
+            max-width: 380px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            min-height: 1px;
+            margin-bottom: 50px;
+        }
+        .panel {
+            box-shadow: 0px 0px 3px 0px rgba(36,43,46,0.07);
+            margin-bottom: 19px;
+            background-color: #ffffff;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+            box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+        }
+        .panel-body{
+            padding: 30px;
+        }
+        .form-control{
+            padding: 6px 12px;
+            height: 42px;
+
+        }
+        .text-center{
+            margin-top: 50px;
+        }
+        .logo{
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="text-center">
+<div class="brand-logo"><img class="logo" alt="" height="55" src="/images/favicon.ico" width="55"></div>
+<h1 class="auth-form-title">欢迎注册</h1>
+</div>
+<div class="auth-box-content">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">用户注册</h3>
+        </div>
+        <div class="panel-body">
+
+            <form class="form-horizontal" action="/users/saveRegInfo"  method="post">
+                <div class="form-group">
+                    <div class="col-sm-12">
+                      <input type="text" id="username" class="form-control"  placeholder="用户名" name="username" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-12">
+                      <input type="text" class="form-control"  placeholder="电子邮件" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-12">
+                      <input type="password" class="form-control"  placeholder="密码" name="password" required>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <p class="terms-agreement-msg text-muted">By signing up, you accept Fleetio's<a  data-toggle="modal" data-target="#myModal">privacy policy</a>.
+                    </p>
+                    <input class="btn btn-md btn-block btn-success"  type="submit" value="Sign Up">
+                    <hr>
+                    <div class="alt-login-signup-text text-muted">
+                        Already have a Fleetio account?
+                    <a href="/users/login">Login in</a>
+                    <br>
+                    <a href="/blogIndex">Blog Index</a>
+
+                    </div>
+                </div>
+            
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat quia error reprehenderit commodi minima vero, explicabo sunt nemo nulla officiis molestiae debitis maxime eius sit modi fugit eos quam amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam repudiandae error dolorem ut fugit aperiam similique doloribus quis! Assumenda repudiandae obcaecati esse, perspiciatis sint animi dignissimos quidem eum! Dolores, optio.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="/javascripts/jquery.js"></script> 
+<script src="/javascripts/bootstrap.min.js"></script> 
+<script>
+    var $userInput = $('#username');
+
+    $userInput.on('blur',function(){
+        var $username = $userInput.val().trim();
+        if($username==''){
+            alert("用户名为空！");
+        }else{
+            $.get('/users/checkUsername',{username:$username},function(result){
+                if(result=='success'){
+                    $userInput.val('');
+                    alert("用户名重复");
+
+                }else{
+                    alert("用户名可以使用");
+                }
+            },'text');
+        }
+        
+    });
+</script>
+
+
+
+
+</body>
+</html>

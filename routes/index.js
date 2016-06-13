@@ -16,4 +16,9 @@ router.get('/testQuery', welcome.query);
 router.get('/testParams/:name/:age', welcome.params);
 
 
+router.get('/blogIndex',welcome.loadBlogIndex);
+
+
+
+
 module.exports = router;

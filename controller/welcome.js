@@ -45,3 +45,23 @@ exports.params = function(req,res){
     var age = req.params.age;
     res.send("成功"+name+" ,"+age);
 };
+
+
+exports.loadBlogIndex = function(req,res){
+    /*首次跳转页面*/
+    var name = req.session.name;
+    res.render('blogIndex', {username: name});
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
