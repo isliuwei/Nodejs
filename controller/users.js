@@ -8,7 +8,7 @@ exports.checkLogin = function(req,res){
     var password = req.body.password;
 
     /*把用户名存入session*/
-    req.session.name = username;
+    req.session.username = username;
 
     // res.send("用户名: "+ username +" , 密码: "+ password);
     // console.log("用户名: "+ username +" , 密码: "+ password+", "+req.session.name);
@@ -16,7 +16,17 @@ exports.checkLogin = function(req,res){
     userModel.getByNameAndPwd(username,password,function(rs){
         if(rs){
             //res.send('登录成功！欢迎'+req.session.name);
-            res.render('blogIndex',{username:req.session.name});
+            /**
+                Session {
+                  cookie:
+                   { path: '/',
+                     _expires: null,
+                     originalMaxAge: null,
+                     httpOnly: true },
+                  name: 'lisi' }
+            */
+            res.render('blogIndex',{username:req.session.username});
+            
         }else{
             res.send('登录失败！');
         }

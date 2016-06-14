@@ -1,0 +1,105 @@
+body{
+	background: #eee;
+}
+header{
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.23);
+}
+.navbar{
+	padding: 0px 10px;
+	background: rgba(255,255,255,0.85);
+}
+
+.logo{
+	width: 30px;
+	height: 30px;
+	float: left;
+	margin-top: 10px;
+	border-radius: 2px;
+}
+
+@media (max-width: 767px){
+    .user-btn{
+    	display: none;
+    }
+    
+
+}
+.container{
+	margin-top: 80px;
+}
+.label{
+	display: inline-block;
+	padding: 5px 10px;
+	margin: 5px;
+}
+.panel-body{
+	/*text-align: justify;*/
+	/*text-align: left;*/
+
+}
+.btn-tag{
+	display: inline-block;
+	padding: 4px 6px;
+	margin: 4px;
+	
+}
+.img{
+	margin-top: 10px;
+}
+.name{
+	margin-top: 10px;
+	text-align: center;
+}
+.desc{
+	text-align: justify;
+	hyphens: auto;
+}
+.bbs-group{
+	text-align: center;
+}
+.label{
+	margin-right: 0px;
+	margin-left: 0px;
+	cursor: pointer;
+}
+.xx{
+	position: absolute;
+	/*width: 20%;*/
+	top: 10%;
+	left: 40%;
+	float: left;
+}
+.footer{
+	/*background-image: url(/images/footer-bg.png);
+	background-color: rgba(0,0,0,.8);*/
+	background: #f2f1f7;
+}
+.wrap{
+	padding-top: 20px;
+}
+.list-group{
+	cursor: pointer;
+}
+
+.tag{
+    display: inline-block;
+    padding: 0 8px;
+    color: #017e66;
+    background-color: rgba(1,126,102,.08);
+    height: 24px;
+    line-height: 24px;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 3px;
+}
+.tag-sm{
+    padding: 0 6px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+}
+.tag:hover{
+	color: #fff;
+	background: #009a61;;
+}

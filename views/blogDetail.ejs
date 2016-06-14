@@ -2,13 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Blog Index</title>
+    <title>Blog Detail</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="shortcut icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
     <link rel="stylesheet" href="/fonts/glyphicons-halflings-regular.svg">
     <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
     <link rel="stylesheet" href="/stylesheets/blogIndex.css">
+    <link rel="stylesheet" href="/stylesheets/editor.css" />
+    <style>
+	    .CodeMirror {
+	    	 height: 250px; 
+		}
+		body p{
+			text-align: justify;
+			text-indent: 20px;
+		}
+	    
+    </style>
+   
 </head>
 <body>
 
@@ -20,51 +31,69 @@
 	<div class="container">
     	<div class="row">
 	        <div class="col-md-9">
-	          	<div class="panel panel-default">
+	          	<div class="panel panel-info">
   					<div class="panel-heading">
-  						<h3 class="panel-title">Panel title</h3>
-  						Panel heading without title
-  						
+  						<h3 class="panel-title">
+							<span class="label label-danger" data-toggle="tooltip" data-placement="top" title="github"><i class="fa fa-github fa-fw"></i>new</span> Welcome to my nodejs blog!
+						</h3>
   					</div>
 					<div class="panel-body">
-						<!-- List group -->
-						<div class="list-group">
-						    <a href="/blogDetail" class="list-group-item"><span class="label label-success">原创</span> 野狗Meetup Node.js技术沙龙</a>
-						    <a class="list-group-item">
-							    <span class="label label-info">原创</span> 
-							    redis 缓存方案--有没有可用的？
-							    <span class="tag tag-sm" data-container="body" data-toggle="popover" data-title="html" data-trigger="hover" data-delay=500 data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">webpack</span>
-							    <span class="tag tag-sm" >webpack</span>
-						    </a>
-						    <a class="list-group-item"><span class="label label-warning">原创</span>  Linux中,有了tar命令,似乎gzip,compress这些命令没有什么用了?</a>
-						    <a class="list-group-item"><span class="label label-danger">原创</span> homebrew 安装问题 </a>
-						    <a class="list-group-item"><span class="label label-primary">原创</span> fis3根目录的文件不能发布到static目录中？</a>
-						    <a class="list-group-item"><span class="label label-success">原创</span> 野狗Meetup Node.js技术沙龙</a>
-						    <a class="list-group-item"><span class="label label-info">原创</span> redis 缓存方案--有没有可用的？</a>
-						    <a class="list-group-item"><span class="label label-warning">原创</span>  Linux中,有了tar命令,似乎gzip,compress这些命令没有什么用了?</a>
-						    <a class="list-group-item"><span class="label label-danger">原创</span> homebrew 安装问题 </a>
-						    <a class="list-group-item"><span class="label label-primary">原创</span> fis3根目录的文件不能发布到static目录中？</a>
-						    <a class="list-group-item"><span class="label label-success">原创</span> 野狗Meetup Node.js技术沙龙</a>
-						    <a class="list-group-item"><span class="label label-info">原创</span> redis 缓存方案--有没有可用的？</a>
-						    <a class="list-group-item"><span class="label label-warning">原创</span>  Linux中,有了tar命令,似乎gzip,compress这些命令没有什么用了?</a>
-						    <a class="list-group-item"><span class="label label-danger">原创</span> homebrew 安装问题 </a>
-						    <a class="list-group-item"><span class="label label-primary">原创</span> fis3根目录的文件不能发布到static目录中？</a>
+						<div class="page-header">
+  							<h2>野狗Meetup Node.js技术沙龙<small> <span class="label label-info">原创</span> </small></h2>
 						</div>
-						<nav>
-					      	<ul class="pagination">
-						        <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-						        <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-						        <li><a href="#">2</a></li>
-						        <li><a href="#">3</a></li>
-						        <li><a href="#">4</a></li>
-						        <li><a href="#">5</a></li>
-						        <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-					     	</ul>
-   						</nav>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat architecto nam sequi accusantium soluta, molestias vero molestiae rem cupiditate maxime. Voluptates officia tempore iste optio minus labore qui eos ut.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat architecto nam sequi accusantium soluta, molestias vero molestiae rem cupiditate maxime. Voluptates officia tempore iste optio minus labore qui eos ut.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat architecto nam sequi accusantium soluta, molestias vero molestiae rem cupiditate maxime. Voluptates officia tempore iste optio minus labore qui eos ut.lorem   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste delectus architecto asperiores? Blanditiis veritatis nulla, doloremque culpa eos beatae enim alias, optio quidem, laborum adipisci! Odio unde, quidem eos soluta.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio quibusdam corporis obcaecati itaque nisi sapiente impedit porro beatae, temporibus et deleniti, eveniet, molestias maxime ipsum aperiam nostrum numquam repudiandae facilis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio sit numquam debitis itaque, optio placeat quisquam similique cum soluta voluptate, animi laboriosam reiciendis doloremque at, quia beatae enim aspernatur ipsa!</p>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat architecto nam sequi accusantium soluta, molestias vero molestiae rem cupiditate maxime. Voluptates officia tempore iste optio minus labore qui eos ut.lorem   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste delectus architecto asperiores? Blanditiis veritatis nulla, doloremque culpa eos beatae enim alias, optio quidem, laborum adipisci! Odio unde, quidem eos soluta.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio quibusdam corporis obcaecati itaque nisi sapiente impedit porro beatae, temporibus et deleniti, eveniet, molestias maxime ipsum aperiam nostrum numquam repudiandae facilis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio sit numquam debitis itaque, optio placeat quisquam similique cum soluta voluptate, animi laboriosam reiciendis doloremque at, quia beatae enim aspernatur ipsa!</p>
+
+						
+					</div>
+					<div class="panel-footer">
+						<span><i class="fa fa-tags fa-fw"></i>tags</span>
+						<span class="label label-info" data-toggle="tooltip" data-placement="top">html</span>
+						<span class="label label-warning" data-toggle="tooltip" data-placement="top">css</span>
+						<span class="label label-success" data-toggle="tooltip" data-placement="top">nodejs</span>
 					</div>
 				</div>
 
+
+
+				<div class="panel panel-danger">
+				  <!-- Default panel contents -->
+				  <div class="panel-heading">10回复</div>
+				  <div class="panel-body">
+				   <div class="replay">
+				   	<img src="" alt="" class="reply-img">
+				   	<span class="reply-info"></span>
+				   	<span class="reply-btn"></span>
+
+				   </div>
+				  </div>
+
+				  <!-- List group -->
+				  <ul class="list-group">
+				    <li class="list-group-item">Cras justo odio</li>
+				    <li class="list-group-item">Dapibus ac facilisis in</li>
+				    <li class="list-group-item">Morbi leo risus</li>
+				    <li class="list-group-item">Porta ac consectetur ac</li>
+				    <li class="list-group-item">Vestibulum at eros</li>
+				  </ul>
+				</div>
+
+				<div class="panel panel-default">
+  					<div class="panel-heading">添加回复</div>
+  					<div class="panel-body">
+	    				<textarea class="editor" name="editor" id="editor" ></textarea>
+            			<button type="button" class="btn btn-primary">回复</button>
+  					</div>
+				</div>
+
+				
+
 			</div>
+
+
 
 	        
 	        <div class="col-md-3">
@@ -91,12 +120,6 @@
 					      </div>
     					</div>
   					</div>
-				</div>
-
-				<div class="panel panel-default">
-	  				<div class="panel-body">
-	   				<button type="button" class="btn btn-success">发布文章</button>
-	  				</div>
 				</div>
 
 	        	<div class="panel panel-success">
@@ -147,25 +170,37 @@
 
 				
 			</div>
+			
         </div>	
 	</div>
+	
+
+
 
 	<!-- 引入 blogHeader 模板 -->
 	<% include blogFooter.ejs %>
-
-	
 <script src="/javascripts/jquery.js"></script> 
 <script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/editor.js"></script>
+<script src="/javascripts/marked.js"></script>
 <script>
 	$(function () {
   		$('[data-toggle="tooltip"]').tooltip()
 	});
 
 	$(function () {
-  $('[data-toggle="popover"]').popover()
-})
+  		$('[data-toggle="popover"]').popover()
+	});
+	var editor = new Editor();
+	editor.render();
+
+</script>
+<script>
+	
+
+
 </script> 
-<script src="http://api.map.baidu.com/api?v=2.0&ak=AMt1vrxwTqGzf1I94PMx7K0u" type="text/javascript"></script>
+<!-- <script src="http://api.map.baidu.com/api?v=2.0&ak=AMt1vrxwTqGzf1I94PMx7K0u" type="text/javascript"></script> -->
 <script type="text/javascript">
 	// 百度地图API功能
 	var map = new BMap.Map("allmap");

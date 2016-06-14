@@ -1,0 +1,103 @@
+<header class='navbar navbar-default navbar-fixed-top' id='main-navbar' role='banner'>
+		<div class='container-fluid'>
+			<div class='navbar-header'>
+			  <!-- <button class='navbar-toggle collapsed' data-target='.navbar-collapse' data-toggle='collapse' type='button'>
+			    <span>
+			      
+			    </span>
+			    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+			  </button> -->
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	            </button>
+			  	<img class="logo" alt="" src="/images/favicon.ico">
+			  
+			</div>
+			
+			<nav class='collapse navbar-collapse' role='navigation'>
+				
+				<!-- <img class="logo" alt="" src="/images/favicon.ico"> -->
+			  <ul class='nav navbar-nav navbar-left'>
+
+			    <li><a href="/features">首页</a></li>
+			    <li  class="active"><a href="/pricing">博文列表</a></li>
+			    <li><a href="/pricing">个人主页</a></li>
+			    <li><a href="/blog">联系我</a></li>
+			    <li><a href="/blog">关于我</a></li>
+			    <div class="xx col-md-3">
+				    <div class="input-group">
+				      <input type="text" class="form-control" placeholder="Search for...">
+				      <span class="input-group-btn">
+				        <button class="btn btn-default" type="button">Go!</button>
+				      </span>
+				    </div>
+  				</div>
+			    <!-- <li class='dropdown'>
+			      <a aria-expanded='false' aria-haspopup='true' class='dropdown-toggle' data-target='#' data-toggle='dropdown' role='button'>
+			        Explore
+			        <i class='material-icons md-expand_more'></i>
+			      </a>
+			      <ul class='dropdown-menu has-caret'>
+			        <li class='dropdown-header'>Integrations</li>
+			        <li><a href="/gps">GPS Tracking</a></li>
+			        <li><a href="/fuel-cards">Fuel Cards</a></li>
+			        <li class='divider' role='separator'></li>
+			        <li class='dropdown-header'>Resources</li>
+			        <li><a href="http://help.fleetio.com">Help Center</a></li>
+			        <li><a href="/faq">FAQs</a></li>
+			        <li><a href="/success">Case Studies</a></li>
+			        <li><a href="/webinars">Training Webinars</a></li>
+			        <li><a href="/api">Developer API</a></li>
+			        <li class='divider' role='separator'></li>
+			        <li class='dropdown-header'>Company</li>
+			        <li><a href="/about">About Us</a></li>
+			        <li><a href="/contact">Contact Us</a></li>
+			        <a class="btn btn-xs btn-yellow btn-hiring" href="/careers"><i class='material-icons md-message'></i>
+			        <span>We're Hiring!</span>
+			        </a>
+			      </ul>
+			    </li> -->
+			  </ul>
+			  <div class='navbar-right'>
+			  
+
+			  
+
+
+				<!-- Split button -->
+				<div class="btn-group user-btn">
+					<button type="button" class="btn btn-default ">
+			  			<% 
+						  	if(username){
+						%>
+						  	<%=username%>
+						  		
+						<%
+						  	}else{
+						%>
+						  	请登录  
+						<%
+						  	}
+						%>
+					</button>
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    <span class="caret"></span>
+					    <span class="sr-only">Toggle Dropdown</span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="/users/login">Login</a></li>
+						<li><a href="#">Setting</a></li>
+						<li><a href="#">Show</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="/users/logout">Logout</a></li>
+					</ul>
+				</div>
+			    <a class="btn btn-primary navbar-btn login-btn" href="/users/login">Login</a>
+			    
+			    <a class="btn navbar-btn js-login-btn" href="/users/register">Register</a>
+			  </div>
+			</nav>
+		</div>
+	</header>

@@ -46,11 +46,23 @@ exports.params = function(req,res){
     res.send("成功"+name+" ,"+age);
 };
 
+// exports.loadBlogHeader = function(req,res){
+
+// };
 
 exports.loadBlogIndex = function(req,res){
     /*首次跳转页面*/
-    var name = req.session.name;
-    res.render('blogIndex', {username: name});
+    var username = req.session.username;
+    // res.locals.name = req.session.name;
+    res.render('blogIndex', {username: username});
+    // res.render('blogIndex');
+};
+
+
+exports.loadBlogDetail = function(req,res){
+    /*首次跳转页面*/
+    var username = req.session.username;
+    res.render('blogDetail', {username: username});
 };
 
 
