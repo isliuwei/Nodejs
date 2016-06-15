@@ -21,6 +21,8 @@ router.get('/blogIndex',welcome.loadBlogIndex);
 
 router.get('/blogDetail',welcome.loadBlogDetail);
 
+router.get('/addBlog',welcome.loadAddBlog);
+
 
 
 

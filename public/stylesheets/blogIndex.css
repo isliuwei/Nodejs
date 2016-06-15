@@ -103,3 +103,37 @@ header{
 	color: #fff;
 	background: #009a61;;
 }
+.add-btn{
+	display: block;
+	color: #fff;
+	text-decoration: none;
+}
+
+.add-btn:hover{
+	color: #fff;
+	text-decoration: none;
+}
+.footer-nav li,.footer-contact-info li{
+	list-style: none;
+	margin-bottom: 15px;
+	color: #444;
+	cursor: pointer;
+}
+.footer-contact-info a{
+	text-decoration: none;
+}
+
+.page-header{
+	margin-top: 0px;
+}
+.page-header h3{
+	margin-top: 0;
+}
+
+
+
+
+
+
+
+

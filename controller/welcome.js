@@ -66,6 +66,12 @@ exports.loadBlogDetail = function(req,res){
 };
 
 
+exports.loadAddBlog = function(req,res){
+    var username = req.session.username;
+    res.render('addBlog', {username: username});
+};
+
+
 
 
 

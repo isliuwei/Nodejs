@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Blog Detail</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
     <link rel="stylesheet" href="/fonts/glyphicons-halflings-regular.svg">
     <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
@@ -17,6 +18,36 @@
 			text-align: justify;
 			text-indent: 20px;
 		}
+		
+		/*.type{
+			display: inline-block;
+			width: 20ch;
+			overflow: hidden;
+			white-space: nowrap;
+			background: #000;
+			color: rgb(59,252,52);
+			font-family: Courier;
+			border-right: 1px solid;
+			-webkit-animation: typing 6s steps(20) infinite,x 1s steps(1) infinite;
+		}
+		@-webkit-keyframes typing{
+			0%{
+				width: 0;
+			}
+			100%{
+				width: 20ch;
+			}
+		}
+		@-webkit-keyframes x{
+			from,to{
+				border-color: transparent;
+			}
+
+			50%{
+				border-color: #fff; 
+			}
+		}*/
+
 	    
     </style>
    
@@ -34,7 +65,7 @@
 	          	<div class="panel panel-info">
   					<div class="panel-heading">
   						<h3 class="panel-title">
-							<span class="label label-danger" data-toggle="tooltip" data-placement="top" title="github"><i class="fa fa-github fa-fw"></i>new</span> Welcome to my nodejs blog!
+							<span class="label label-danger" data-toggle="tooltip" data-placement="top" title="github"><i class="fa fa-github fa-fw"></i>new</span> <span class="type">Welcome to my nodejs blog!</span>
 						</h3>
   					</div>
 					<div class="panel-body">
@@ -200,7 +231,7 @@
 
 
 </script> 
-<!-- <script src="http://api.map.baidu.com/api?v=2.0&ak=AMt1vrxwTqGzf1I94PMx7K0u" type="text/javascript"></script> -->
+<!-- <script src="http://api.map.baidu.com/api?v=2.0&ak=AMt1vrxwTqGzf1I94PMx7K0u" type="text/javascript"></script>
 <script type="text/javascript">
 	// 百度地图API功能
 	var map = new BMap.Map("allmap");
@@ -212,6 +243,6 @@
 	map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
 	//map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
 	map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
-</script>
+</script> -->
 </body>
 </html>

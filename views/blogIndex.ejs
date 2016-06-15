@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/fonts/glyphicons-halflings-regular.svg">
     <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
     <link rel="stylesheet" href="/stylesheets/blogIndex.css">
+
 </head>
 <body>
 
@@ -95,7 +96,7 @@
 
 				<div class="panel panel-default">
 	  				<div class="panel-body">
-	   				<button type="button" class="btn btn-success">发布文章</button>
+	   				<button  type="button" class="btn btn-success"><a class="add-btn" href="/addBlog">发布文章</a></button>
 	  				</div>
 				</div>
 
@@ -149,6 +150,7 @@
 			</div>
         </div>	
 	</div>
+	
 
 	<!-- 引入 blogHeader 模板 -->
 	<% include blogFooter.ejs %>
@@ -165,18 +167,6 @@
   $('[data-toggle="popover"]').popover()
 })
 </script> 
-<script src="http://api.map.baidu.com/api?v=2.0&ak=AMt1vrxwTqGzf1I94PMx7K0u" type="text/javascript"></script>
-<script type="text/javascript">
-	// 百度地图API功能
-	var map = new BMap.Map("allmap");
-	var point = new BMap.Point(126.637828, 45.714955);
-	map.centerAndZoom(point, 16);
-	var marker = new BMap.Marker(point);  // 创建标注
-	map.addOverlay(marker);               // 将标注添加到地图中
-	marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
-	map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
-	//map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
-	map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
-</script>
+
 </body>
 </html>
