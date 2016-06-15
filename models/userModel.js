@@ -1,8 +1,6 @@
 
-var mongoose = require('mongoose');
-
-mongoose.connect('mongodb://localhost/test');
-
+/*引入数据库配置文件*/
+var mongoose = require('./db');
 
 /*定义一个 userSchema 类似mysql的表结构*/
 var userSchema = mongoose.Schema({
@@ -70,6 +68,18 @@ exports.deleteById = function(id,callback){
 	});
 
 };
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

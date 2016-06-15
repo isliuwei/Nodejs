@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言列表</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+</head>
+<body>
+
+
+
+
+
+
+
+<table class="table table-bordered">
+   <caption>边框表格布局</caption>
+   <thead>
+      <tr>
+        <th>用户名</th>
+        <th>邮箱</th>
+        <th>主题</th>
+        <th>内容</th>
+        <th>时间</th>
+        <th>id</th>
+        <th>操作</th>
+      </tr>
+   </thead>
+   <tbody>
+   <% 
+      for(var i=0; i< messages.length; i++){
+   %>
+      <tr>
+         <td><%= messages[i].messName %></td>
+         <td><%= messages[i].messEmail %></td>
+         <td><%= messages[i].messSubject %></td>
+         <td><%= messages[i].messContent %></td>
+         <td><%= messages[i].messTime %></td>
+         <td><%= messages[i]._id %></td>
+         <td><a href="delete?mess_id=<%= messages[i]._id %>">删除</a></td>
+      </tr>
+    <% 
+      }
+    %> 
+   </tbody>
+</table>
+
+
+</body>
+</html>
