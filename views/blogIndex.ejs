@@ -50,6 +50,14 @@
 						    <a class="list-group-item"><span class="label label-warning">原创</span>  Linux中,有了tar命令,似乎gzip,compress这些命令没有什么用了?</a>
 						    <a class="list-group-item"><span class="label label-danger">原创</span> homebrew 安装问题 </a>
 						    <a class="list-group-item"><span class="label label-primary">原创</span> fis3根目录的文件不能发布到static目录中？</a>
+						    <%
+						    	for(var i=0; i<blogs.length; i++){
+						    %>
+								<a class="list-group-item"><span class="label label-primary"><%= blogs[i].blogType %></span> <%= blogs[i].blogTitle %></a>
+
+						    <%
+						    	}
+						    %>
 						</div>
 						<nav>
 					      	<ul class="pagination">

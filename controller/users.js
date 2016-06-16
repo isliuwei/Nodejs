@@ -1,5 +1,7 @@
 var userModel = require('../models/userModel');
 
+var blogModel = require("../models/blogModel");
+
 
 /**处理post请求*/
 /*  checkLogin方法    */
@@ -15,6 +17,15 @@ exports.checkLogin = function(req,res){
 
     userModel.getByNameAndPwd(username,password,function(rs){
         if(rs){
+            blogModel.getAllBlogs(function(rs1){
+                //res.render('blogIndex',{username:req.session.username});
+
+
+                res.render('blogIndex',{
+                    username: req.session.username,
+                    blogs:rs1
+                });
+            });
             //res.send('登录成功！欢迎'+req.session.name);
             /**
                 Session {
@@ -25,7 +36,7 @@ exports.checkLogin = function(req,res){
                      httpOnly: true },
                   name: 'lisi' }
             */
-            res.render('blogIndex',{username:req.session.username});
+            
             
         }else{
             res.send('登录失败！');

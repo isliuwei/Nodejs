@@ -7,6 +7,10 @@ var welcome = require('../controller/welcome');
 /*  引入控制器controller下的message模块  */
 var message = require('../controller/message');
 
+
+/*  引入控制器controller下的blogs模块  */
+var blogs = require('../controller/blogs');
+
 /* GET home page. use welcome.index*/
 router.get('/', welcome.index);
 
@@ -17,7 +21,11 @@ router.get('/testQuery', welcome.query);
 
 router.get('/testParams/:name/:age', welcome.params);
 
-router.get('/blogIndex',welcome.loadBlogIndex);
+//router.get('/blogIndex',welcome.loadBlogIndex);
+
+
+router.get('/blogIndex',blogs.loadBlogIndex);
+
 
 router.get('/blogDetail',welcome.loadBlogDetail);
 
@@ -27,6 +35,11 @@ router.post('/saveMessage',message.saveMessage);
 
 
 router.get('/messList',message.listMessage);
+
+
+router.post('/saveBlog',blogs.saveBlog);
+
+
 
 
 

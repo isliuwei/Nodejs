@@ -31,6 +31,7 @@ exports.saveByAll = function(name,pwd,email,callback){
 	user.save(function(err,result){
 		callback(result);
 	});
+	
 
 
 
@@ -40,7 +41,7 @@ exports.saveByAll = function(name,pwd,email,callback){
 
 exports.getAll = function(callback){
 	User.find(function(err,result){
-		// console.log(result);
+		//console.log(result);
 		callback(result);
 		
 	});

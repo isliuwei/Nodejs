@@ -52,35 +52,64 @@
   						Panel heading without title
   					</div>
 					<div class="panel-body">
-					<form class="form-block">
+					<form class="form-block" action="/saveBlog" method="post">
+					<input type="hidden" name="blogAuthor" value="<%= username %>">
+					<input type="hidden" name="blogAddTime" value="<%= new Date().toLocaleString() %>">
 						<div class="form-group">
-							<span ></span>
+							
 							<!-- <label class="text-primary bg-success">类型</label>
 							<span class="label label-default">Default</span> -->
 							<span class="label label-success">类型</span>
 							
-							<select class="form-control form-select">
+							<select class="form-control form-select" name="blogType">
 							  <option>请选择</option>
 							  <option>原创</option>
 							  <option>转载</option>
 							  <option>精华</option>
 							</select>
 						</div>
+
+
+						<div class="form-group">
+							<span ></span>
+							<!-- <label class="text-primary bg-success">类型</label>
+							<span class="label label-default">Default</span> -->
+							<span class="label label-danger">分类</span>
+							
+							<select class="form-control form-select" name="blogCate">
+							  <option>请选择</option>
+							  <option>html</option>
+							  <option>css</option>
+							  <option>javascript</option>
+							  <option>php</option>
+							  <option>nodejs</option>
+							  <option>angularjs</option>
+							  <option>reactjs</option>
+							</select>
+						</div>
 						<!-- <label class="text-primary bg-success">标题</label> -->
 						<span class="label label-warning">标题</span>
-						<textarea class="form-control" rows="1" placeholder="文章标题"></textarea>
+						<textarea class="form-control" rows="1" placeholder="文章标题" name="blogTitle"></textarea>
 
-					</form>
+					
 					<br>	
 						<!-- List group -->
 						<div id="editor-container" class="container">
-        				<div id="editor-trigger"><p>请输入内容</p></div>
-				        <!-- <textarea id="editor-trigger" style="display:none;">
+        				<!-- <div id="editor-trigger"><p>请输入内容</p></div> -->
+				        <textarea id="editor-trigger" style="display:none;" name="blogContent">
 				            <p>请输入内容...</p>
-				        </textarea> -->
+				        </textarea>
     					</div>
 						
 					</div>
+
+
+					<div class="panel-footer">
+						<button type="submit" class="btn btn-primary">回复</button>
+					</div>
+
+					</form>
+
 				</div>
 
 			</div>
