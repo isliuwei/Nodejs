@@ -54,6 +54,8 @@
 </head>
 <body>
 
+
+
    
 
 	<!-- 引入 blogHeader 模板 -->
@@ -70,14 +72,9 @@
   					</div>
 					<div class="panel-body">
 						<div class="page-header">
-  							<h2>野狗Meetup Node.js技术沙龙<small> <span class="label label-info">原创</span> </small></h2>
+  							<h2><%= blogInfo.blogTitle%><small> <span class="label label-info"><%= blogInfo.blogType%></span> </small></h2>
 						</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat architecto nam sequi accusantium soluta, molestias vero molestiae rem cupiditate maxime. Voluptates officia tempore iste optio minus labore qui eos ut.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat architecto nam sequi accusantium soluta, molestias vero molestiae rem cupiditate maxime. Voluptates officia tempore iste optio minus labore qui eos ut.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat architecto nam sequi accusantium soluta, molestias vero molestiae rem cupiditate maxime. Voluptates officia tempore iste optio minus labore qui eos ut.lorem   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste delectus architecto asperiores? Blanditiis veritatis nulla, doloremque culpa eos beatae enim alias, optio quidem, laborum adipisci! Odio unde, quidem eos soluta.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio quibusdam corporis obcaecati itaque nisi sapiente impedit porro beatae, temporibus et deleniti, eveniet, molestias maxime ipsum aperiam nostrum numquam repudiandae facilis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio sit numquam debitis itaque, optio placeat quisquam similique cum soluta voluptate, animi laboriosam reiciendis doloremque at, quia beatae enim aspernatur ipsa!</p>
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat architecto nam sequi accusantium soluta, molestias vero molestiae rem cupiditate maxime. Voluptates officia tempore iste optio minus labore qui eos ut.lorem   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste delectus architecto asperiores? Blanditiis veritatis nulla, doloremque culpa eos beatae enim alias, optio quidem, laborum adipisci! Odio unde, quidem eos soluta.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio quibusdam corporis obcaecati itaque nisi sapiente impedit porro beatae, temporibus et deleniti, eveniet, molestias maxime ipsum aperiam nostrum numquam repudiandae facilis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio sit numquam debitis itaque, optio placeat quisquam similique cum soluta voluptate, animi laboriosam reiciendis doloremque at, quia beatae enim aspernatur ipsa!</p>
-
+						<%- blogInfo.blogContent%>
 						
 					</div>
 					<div class="panel-footer">

@@ -26,6 +26,9 @@ exports.saveBlog = function(req,res){
 
 
 
+
+
+
 exports.loadBlogIndex = function(req,res){
 	var username = req.session.username;
 	blogModel.getAllBlogs(function(rs){
@@ -43,4 +46,50 @@ exports.loadBlogIndex = function(req,res){
 		}
 	});
 
+};
+
+
+
+exports.loadBlogDetail = function(req,res){
+	var blogId = req.query.blogId;
+	var username = req.session.username;
+	
+	blogModel.getBlogById(blogId,function(rs){
+		if(rs){
+			res.render('blogDetail',{username: username,blogInfo:rs});
+		}else{
+			res.send('fail!!!!');
+		}
+	});
+	
+};
+
+
+
+
+
+exports.listBlogs = function(req,res){
+	blogModel.getAllBlogs(function(rs){
+		if(rs){
+			res.render('blogsList',{blogs:rs});
+		}
+		
+	});
+
+};
+
+
+
+exports.delete = function(req,res){
+    var blogId = req.query.blogId;
+
+    blogModel.deleteById(blogId,function(rs){
+        if(rs){
+            res.send('删除成功！');
+
+        }else{
+            res.send('删除失败！');
+        }
+    });
+    
 };

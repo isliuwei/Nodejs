@@ -27,7 +27,7 @@ router.get('/testParams/:name/:age', welcome.params);
 router.get('/blogIndex',blogs.loadBlogIndex);
 
 
-router.get('/blogDetail',welcome.loadBlogDetail);
+//router.get('/blogDetail',welcome.loadBlogDetail);
 
 router.get('/addBlog',welcome.loadAddBlog);
 
@@ -38,6 +38,16 @@ router.get('/messList',message.listMessage);
 
 
 router.post('/saveBlog',blogs.saveBlog);
+
+
+router.get('/blogDetail',blogs.loadBlogDetail);
+
+
+router.get('/blogsList',blogs.listBlogs);
+
+
+router.get('/delete',blogs.delete);
+
 
 
 

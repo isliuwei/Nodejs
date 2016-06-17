@@ -45,3 +45,38 @@ exports.getAllBlogs = function(callback){
 		//console.log(result);
 	});
 };
+
+
+exports.getBlogById = function(blogId,callback){
+
+	Blog.findOne({_id:blogId},function(err,result){
+		callback(result);
+	});
+};
+
+exports.deleteById = function(id,callback){
+	var blog = new Blog({
+		_id: id
+	});
+
+	blog.remove(function(err,result){
+		callback(result);
+	});
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
