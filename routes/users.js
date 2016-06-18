@@ -37,4 +37,19 @@ router.get('/checkUsername',users.checkName);
 
 router.get('/delete',users.delete);
 
+
+router.post('/saveBlog',users.saveUserBlog);
+
+
+
+
+
+
+
+
+
+
+
+
+
 module.exports = router;

@@ -143,3 +143,37 @@ exports.delete = function(req,res){
 };
 
 
+
+
+/*DB*/
+exports.saveUserBlog = function(req,res){
+    var username = req.body.blogAuthor;
+    var blogJSON = {
+        "blogTitle": req.body.blogTitle,
+        "blogCate": req.body.blogCate,
+        "blogType": req.body.blogType,
+        "blogContent": req.body.blogContent,
+        "blogAddTime": req.body.blogAddTime
+    }
+
+    //console.log(blogJSON);
+    //console.log(username);
+    
+    userModel.saveBlogByUser(blogJSON,username,function(rs){
+
+         if(rs){
+             res.send("成功！");
+         }else{
+             res.send("失败！");
+         }
+
+    });
+    
+
+    
+
+
+
+};
+
+

@@ -6,7 +6,8 @@ var mongoose = require('./db');
 var userSchema = mongoose.Schema({
     username: String,
     password: String,
-    email: String
+    email: String,
+    blogs: Array
 });
 
 var User = mongoose.model('User',userSchema,'users');
@@ -67,6 +68,32 @@ exports.deleteById = function(id,callback){
 	user.remove(function(err,result){
 		callback(result);
 	});
+
+};
+
+
+
+exports.saveBlogByUser = function(blogJSON,username,callback){
+
+
+
+	/*实例化一个对象*/
+	// var user = new User({
+	// 	username: username,
+	// 	blogs: blogJSON
+	// });
+
+	// console.log(user);
+	User.update({username: username},{$set:{blogs: blogJSON}},{upser: true},function(err, numberAffected, raw){
+		 //if (err) return handleError(err);
+		//console.log(numberAffected);
+		callback(numberAffected);
+	});
+
+	// user.save(function(err,result){
+	// 	callback(result);
+	// });
+
 
 };
 

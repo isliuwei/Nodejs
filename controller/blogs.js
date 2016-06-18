@@ -16,13 +16,11 @@ exports.saveBlog = function(req,res){
 			res.send("失败！");
 		}
 	});
-
-
 	//console.log(blogTitle +" ,"+blogCate+" ,"+blogType+" ,"+blogContent+" ,"+blogAuthor+" ,"+blogAddTime);
-
-
-
 };
+
+
+
 
 
 
