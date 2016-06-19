@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Setting</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/fonts/glyphicons-halflings-regular.svg">
+    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/blogIndex.css">
+
+</head>
+<body>
+
+   
+
+	<!-- 引入 blogHeader 模板 -->
+	<% include blogHeader.ejs %>
+
+	<div class="container">
+    	<div class="row">
+	        <div class="col-md-9">
+	          	<div class="panel panel-default">
+  					<div class="panel-heading">
+  						<h3 class="panel-title">UserSetting</h3>
+  						Panel heading without title
+  						
+  					</div>
+					<div class="panel-body">
+						<form class="form-horizontal">
+						  <div class="form-group">
+						    <label for="username" class="col-md-offset-1 col-md-2 control-label">Username</label>
+						    <div class="col-md-5">
+						      <input type="text" class="form-control" id="username" placeholder="" value="<%= userInfo.username %>">
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <label for="email" class="col-md-offset-1 col-md-2 control-label">Email</label>
+						    <div class="col-md-5">
+						      <input type="email" class="form-control" id="email" placeholder="">
+						    </div>
+						  </div>
+
+						  <div class="form-group">
+						    <label for="website" class="col-md-offset-1 col-md-2 control-label">Person Website</label>
+						    <div class="col-md-5">
+						      <input type="text" class="form-control" id="website" placeholder="www.isliuwei.com">
+						    </div>
+						  </div>
+
+						  <div class="form-group">
+						    <label for="weibo" class="col-md-offset-1 col-md-2 control-label">Weibo</label>
+						    <div class="col-md-5">
+						      <input type="text" class="form-control" id="weibo" placeholder="@奔跑的脆皮肠">
+						    </div>
+						  </div>
+
+						  <div class="form-group">
+						    <label for="github" class="col-md-offset-1 col-md-2 control-label">Github</label>
+						    <div class="col-md-5">
+						      <input type="text" class="form-control" id="github" placeholder="github.com/isliuwei">
+						    </div>
+						  </div>
+
+
+						  <div class="form-group">
+						    <label for="inputPassword3" class="col-md-offset-1 col-md-2 control-label">Personal Sign</label>
+						    <div class="col-md-5">
+						      <textarea class="form-control" rows="3"></textarea>
+						    </div>
+						  </div>
+						  
+						  <div class="form-group">
+						    <div class="col-md-offset-3 col-md-10">
+						      <button type="submit" class="btn btn-primary">保存修改</button>
+						    </div>
+						  </div>
+						</form>
+					</div>
+				</div>
+
+
+				<div class="panel panel-default">
+  					<div class="panel-heading">
+  						<h3 class="panel-title">更改密码</h3>
+  						<!-- Panel heading without title -->
+  						
+  					</div>
+					<div class="panel-body">
+						<form class="form-horizontal">
+						  <div class="form-group">
+						    <label for="oldPwd" class="col-md-offset-1 col-md-2 control-label">Old Password</label>
+						    <div class="col-md-5">
+						      <input type="password" class="form-control" id="oldPwd" placeholder="" value="<%= userInfo.password %>">
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <label for="newPwd" class="col-md-offset-1 col-md-2 control-label">New Password</label>
+						    <div class="col-md-5">
+						      <input type="password" class="form-control" id="newPwd" placeholder="">
+						    </div>
+						  </div>
+
+
+						  <div class="form-group">
+						    <div class="col-md-offset-3 col-md-10">
+						      <button type="submit" class="btn btn-primary">更改密码</button>
+						    </div>
+						  </div>
+
+						  
+						</form>
+					</div>
+				</div>
+
+			</div>
+
+	        
+	        <div class="col-md-3">
+
+	        	<div class="panel panel-info">
+  					<div class="panel-heading">About Me</div>
+  					<div class="panel-body">
+	    				<div class="thumbnail">
+					      	<img class="img img-circle img-thumbnail" src="/images/favicon.ico" alt="...">
+					      	<div class="caption">
+					        <h3 class="name bg-info text-success">Liu wei</h3>
+					        <p class="desc text-info">Lorem ipsum dolor sit amet, consectetur elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+					        <!-- <p class="desc">
+					        	<a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a>
+					        </p> -->
+					        <div class="bbs-group">
+					        	<span class="label label-primary" data-toggle="tooltip" data-placement="top" title="github"><i class="fa fa-github fa-fw"></i></span>
+								<span class="label label-success" data-toggle="tooltip" data-placement="top" title="QQ"><i class="fa fa-qq fa-fw"></i></span>
+								<span class="label label-info" data-toggle="tooltip" data-placement="top" title="wechat"><i class="fa fa-wechat fa-fw"></i></span>
+								<span class="label label-warning" data-toggle="tooltip" data-placement="top" title="facebook"> <i class="fa fa-facebook fa-fw"></i></span>
+								<span class="label label-danger" data-toggle="tooltip" data-placement="top" title="twitter"> <i class="fa fa-twitter fa-fw"></i></span>
+					        </div>
+							
+					      </div>
+    					</div>
+  					</div>
+				</div>
+
+				<div class="panel panel-default">
+	  				<div class="panel-body">
+	   				<button  type="button" class="btn btn-success"><a class="add-btn" href="/addBlog">发布文章</a></button>
+	  				</div>
+				</div>
+
+	        	<!-- 引入 blogTag 模板 -->
+				<% include blogTag.ejs %>
+
+				
+			</div>
+        </div>	
+	</div>
+	
+
+	<!-- 引入 blogHeader 模板 -->
+	<% include blogFooter.ejs %>
+
+	
+<script src="/javascripts/jquery.js"></script> 
+<script src="/javascripts/bootstrap.min.js"></script>
+<script>
+	$(function () {
+  		$('[data-toggle="tooltip"]').tooltip()
+	});
+
+	$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+</script> 
+
+</body>
+</html>

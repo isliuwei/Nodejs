@@ -100,6 +100,18 @@ exports.saveBlogByUser = function(blogJSON,username,callback){
 
 
 
+exports.getUserByName = function(username,callback){
+
+	User.findOne({username: username},function(err,result){
+		callback(result);
+		//console.log(result);
+	});
+
+};
+
+
+
+
 
 
 

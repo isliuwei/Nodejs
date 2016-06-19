@@ -168,12 +168,26 @@ exports.saveUserBlog = function(req,res){
          }
 
     });
-    
+
+
+  
+
+};
+
+
+
+ /*跳转至登出页面*/
+exports.loadUsrSetPage = function(req,res){
+    var username = req.query.userName;
+    //console.log(username);
+    userModel.getUserByName(username,function(rs){
+        if(rs){
+          res.render('userSetting',{username:username,userInfo:rs});  
+        }
+
+    });
 
     
-
-
-
 };
 
 

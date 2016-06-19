@@ -41,6 +41,9 @@ router.get('/delete',users.delete);
 router.post('/saveBlog',users.saveUserBlog);
 
 
+router.get('/userSetting',users.loadUsrSetPage);
+
+
 
 
 
