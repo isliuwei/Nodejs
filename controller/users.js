@@ -191,3 +191,17 @@ exports.loadUsrSetPage = function(req,res){
 };
 
 
+
+exports.loadProfilePage = function(req,res){
+    var username = req.query.userName;
+    //console.log(username);
+    userModel.getUserByName(username,function(rs){
+        if(rs){
+          res.render('profile',{username:username,userInfo:rs}); 
+          //console.log(rs); 
+        }
+
+    });
+};
+
+

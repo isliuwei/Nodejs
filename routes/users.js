@@ -43,6 +43,8 @@ router.post('/saveBlog',users.saveUserBlog);
 
 router.get('/userSetting',users.loadUsrSetPage);
 
+router.get('/profile',users.loadProfilePage);
+
 
 
 
