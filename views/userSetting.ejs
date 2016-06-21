@@ -28,38 +28,46 @@
   						
   					</div>
 					<div class="panel-body">
-						<form class="form-horizontal">
+						<form class="form-horizontal" action="/users/updateUserInfo" method="post">
+						<input name="userId" type="hidden" value="<%= userInfo._id %>">
 						  <div class="form-group">
 						    <label for="username" class="col-md-offset-1 col-md-2 control-label">Username</label>
 						    <div class="col-md-5">
-						      <input type="text" class="form-control" id="username" placeholder="" value="<%= userInfo.username %>">
+						      <input name="username" type="text" class="form-control" id="username" placeholder="" value="<%= userInfo.username %>">
 						    </div>
 						  </div>
 						  <div class="form-group">
 						    <label for="email" class="col-md-offset-1 col-md-2 control-label">Email</label>
 						    <div class="col-md-5">
-						      <input type="email" class="form-control" id="email" placeholder="">
+						      <input name="email" type="email" class="form-control" id="email" placeholder="" value="<%= userInfo.email %>">
 						    </div>
 						  </div>
 
 						  <div class="form-group">
 						    <label for="website" class="col-md-offset-1 col-md-2 control-label">Person Website</label>
 						    <div class="col-md-5">
-						      <input type="text" class="form-control" id="website" placeholder="www.isliuwei.com">
+						    <%
+						    	var website = userInfo.website==""?"":userInfo.website;
+						    %>
+						      <input name="website" type="text" class="form-control" id="website" placeholder="www.isliuwei.com" value="<%= website %>">
 						    </div>
 						  </div>
-
+							<%
+							    var weibo = userInfo.weibo==""?"":userInfo.weibo;
+							%>
 						  <div class="form-group">
 						    <label for="weibo" class="col-md-offset-1 col-md-2 control-label">Weibo</label>
 						    <div class="col-md-5">
-						      <input type="text" class="form-control" id="weibo" placeholder="@奔跑的脆皮肠">
+						      <input name="weibo" type="text" class="form-control" id="weibo" placeholder="@奔跑的脆皮肠" value="<%= weibo %>">
 						    </div>
 						  </div>
-
+							<%
+						    	var github = userInfo.github==""?"":userInfo.github;
+						  	%>
 						  <div class="form-group">
 						    <label for="github" class="col-md-offset-1 col-md-2 control-label">Github</label>
 						    <div class="col-md-5">
-						      <input type="text" class="form-control" id="github" placeholder="github.com/isliuwei">
+						      <input name="github" type="text" class="form-control" id="github" placeholder="github.com/isliuwei" value="<%= github %>">
 						    </div>
 						  </div>
 
@@ -67,7 +75,10 @@
 						  <div class="form-group">
 						    <label for="inputPassword3" class="col-md-offset-1 col-md-2 control-label">Personal Sign</label>
 						    <div class="col-md-5">
-						      <textarea class="form-control" rows="3"></textarea>
+						    <%
+						    	var sign = userInfo.sign==""?"":userInfo.sign;
+						  	%>
+						      <textarea name="sign" class="form-control" rows="3"><%= sign %></textarea>
 						    </div>
 						  </div>
 						  
@@ -98,7 +109,7 @@
 						  <div class="form-group">
 						    <label for="newPwd" class="col-md-offset-1 col-md-2 control-label">New Password</label>
 						    <div class="col-md-5">
-						      <input type="password" class="form-control" id="newPwd" placeholder="">
+						      <input name="password" type="password" class="form-control" id="newPwd" placeholder="">
 						    </div>
 						  </div>
 

@@ -204,4 +204,32 @@ exports.loadProfilePage = function(req,res){
     });
 };
 
+exports.updateInfo = function(req,res){
+    var userId = req.body.userId;
+    var username = req.body.username;
+    var email = req.body.email;
+    var website = req.body.website;
+    var weibo = req.body.weibo;
+    var github = req.body.github;
+    var sign = req.body.sign;
+
+    userModel.update(userId,username,email,website,weibo,github,sign,function(rs){
+        if(rs){
+             res.send("成功！");
+             //res.redirect(loadLogPage);
+         }else{
+             res.send("失败！");
+         }
+    });
+
+
+    
+
+    
+
+    //console.log(userId+" , "+username+" ,"+email+" ,"+website+" ,"+github+" ,"+sign);
+
+
+};
+
 

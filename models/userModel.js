@@ -7,6 +7,10 @@ var userSchema = mongoose.Schema({
     username: String,
     password: String,
     email: String,
+    sign: String,
+    website: String,
+    weibo: String,
+    github: String,
     blogs: Array
 });
 
@@ -109,6 +113,16 @@ exports.getUserByName = function(username,callback){
 
 };
 
+
+
+exports.update = function(userId,username,email,weibo,website,github,sign,callback){
+	User.update({_id: userId},{$set:{username:username,email:email,weibo:weibo,website:website,github:github,sign:sign}},{upser: true},function(err, numberAffected, raw){
+		 //if (err) return handleError(err);
+		//console.log(numberAffected);
+		callback(numberAffected);
+	});
+
+};
 
 
 

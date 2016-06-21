@@ -45,6 +45,8 @@ router.get('/userSetting',users.loadUsrSetPage);
 
 router.get('/profile',users.loadProfilePage);
 
+router.post('/updateUserInfo',users.updateInfo);
+
 
 
 
