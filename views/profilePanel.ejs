@@ -12,8 +12,16 @@
 		      			USER = username;
 		      		}
 		      	%>
+		      	<%
+		      		var SIGN;
+		      		if(!userInfo.sign){
+		      			SIGN = "这个家伙很懒，什么都没留下！";
+		      		}else{
+		      			SIGN = userInfo.sign;
+		      		}
+		      	%>
 		        <h3 class="name bg-info text-success"><%= USER %></h3>
-		        <p class="desc text-info">Lorem ipsum dolor sit amet, consectetur elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+		        <p class="desc text-info"><%= SIGN %></p>
 		        <!-- <p class="desc">
 		        	<a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a>
 		        </p> -->

@@ -1,5 +1,5 @@
 var blogModel = require("../models/blogModel");
-
+var userModel = require('../models/userModel');
 
 exports.saveBlog = function(req,res){
 	var blogTitle = req.body.blogTitle;
@@ -35,7 +35,8 @@ exports.loadBlogIndex = function(req,res){
 			// console.log(rs);
 			res.render('blogIndex',{
 				username: username,
-				blogs:rs
+				blogs: rs,
+				userInfo: blogModel.userInfo
 			});
 			// res.render('blogIndex',{
 				

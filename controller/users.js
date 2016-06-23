@@ -3,6 +3,7 @@ var userModel = require('../models/userModel');
 var blogModel = require("../models/blogModel");
 
 
+
 /**处理post请求*/
 /*  checkLogin方法    */
 exports.checkLogin = function(req,res){
@@ -17,15 +18,23 @@ exports.checkLogin = function(req,res){
 
     userModel.getByNameAndPwd(username,password,function(rs){
         if(rs){
-            blogModel.getAllBlogs(function(rs1){
-                //res.render('blogIndex',{username:req.session.username});
-
-
-                res.render('blogIndex',{
-                    username: req.session.username,
-                    blogs:rs1
+            userModel.getUserByName(username,function(rs0){
+                //console.log(rs0);
+                var userInfo = rs0;
+                req.session.userInfo = userInfo;
+                //exports.userInfo = userInfo;
+                blogModel.getAllBlogs(function(rs1){
+                    //console.log(rs1);
+                    res.render('blogIndex',{
+                        username: req.session.username,
+                        blogs: rs1,
+                        userInfo: userInfo
+                    });
+                    //res.render('profilePanel',{userInfo:rs0});
                 });
+
             });
+            
             //res.send('登录成功！欢迎'+req.session.name);
             /**
                 Session {
