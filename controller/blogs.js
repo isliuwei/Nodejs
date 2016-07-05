@@ -33,15 +33,18 @@ exports.loadBlogIndex = function(req,res){
 		if(rs){
 			// console.log(username);
 			// console.log(rs);
-			res.render('blogIndex',{
-				username: username,
-				blogs: rs,
-				userInfo: blogModel.userInfo
-			});
-			// res.render('blogIndex',{
-				
-			// 	blogs:rs
-			// });
+			if(username){
+				res.render('blogIndex',{
+					username: username,
+					blogs: rs
+				});
+			}else{
+				res.render('blogIndex_unlogin',{
+					blogs: rs
+				});
+			}
+			
+			
 		}
 	});
 

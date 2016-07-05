@@ -64,13 +64,17 @@ exports.params = function(req,res){
 
 exports.loadBlogDetail = function(req,res){
     /*首次跳转页面*/
+    //var userInfo = req.session.username;
     var username = req.session.username;
+    
     res.render('blogDetail', {username: username});
 };
 
 
 exports.loadAddBlog = function(req,res){
+    //var username = req.session.username;
     var username = req.session.username;
+    //var userInfo = req.session.userInfo;
     res.render('addBlog', {username: username});
 };
 

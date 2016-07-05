@@ -13,22 +13,26 @@ exports.checkLogin = function(req,res){
     /*把用户名存入session*/
     req.session.username = username;
 
+
     // res.send("用户名: "+ username +" , 密码: "+ password);
     // console.log("用户名: "+ username +" , 密码: "+ password+", "+req.session.name);
 
     userModel.getByNameAndPwd(username,password,function(rs){
         if(rs){
+
             userModel.getUserByName(username,function(rs0){
                 //console.log(rs0);
-                var userInfo = rs0;
-                req.session.userInfo = userInfo;
+                //var userInfo = rs0;
+                req.session.userInfo = rs0;
                 //exports.userInfo = userInfo;
+
                 blogModel.getAllBlogs(function(rs1){
                     //console.log(rs1);
+                    //console.log(req.session.userInfo);
                     res.render('blogIndex',{
                         username: req.session.username,
                         blogs: rs1,
-                        userInfo: userInfo
+                        userInfo: req.session.userInfo
                     });
                     //res.render('profilePanel',{userInfo:rs0});
                 });
